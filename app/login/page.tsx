@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { supabase } from '@/lib/supabase';
 
@@ -11,10 +11,10 @@ export default function Login() {
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
 
-  useEffect(() => {
+  // useEffect(() => {
     // Ensure this code runs only on the client side
-    if (!router?.isReady) return;
-  }, [router.isReady]);
+  //   if (!router?.isReady) return;
+  // }, [router.isReady]);
 
   const handleLogin = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
