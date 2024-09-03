@@ -1,9 +1,13 @@
 // components/ProtectedRoute.js
-import { useEffect } from 'react';
+import { ReactNode, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useSession } from '@supabase/auth-helpers-react';
 
-const ProtectedRoute = ({ children }) => {
+interface ProtectedRouteProps {
+  children: ReactNode;
+}
+
+const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
   const router = useRouter();
   const session = useSession();
 
@@ -18,7 +22,7 @@ const ProtectedRoute = ({ children }) => {
     return null;
   }
 
-  return children;
+  return children
 };
 
 export default ProtectedRoute;

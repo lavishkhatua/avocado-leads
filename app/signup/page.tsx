@@ -13,7 +13,7 @@ export default function Signup() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const handleSignup = async (e) => {
+  const handleSignup = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     setLoading(true);
 

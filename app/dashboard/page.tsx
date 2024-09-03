@@ -5,7 +5,7 @@ import ProtectedRoute from '../protectedRoute/protectedRoute';
 import { supabase } from '@/lib/supabase';
 
 
-function dashboard() {  
+function Dashboard() {  
     const [files, setFiles] = useState([
         { name: 'E102', status: 'Cancelled', leads: 10000, downloadable: false },
         { name: 'E103', status: 'Completed', leads: 15000, downloadable: true },
@@ -94,4 +94,4 @@ function dashboard() {
       )
 }
 
-export default dashboard;
+export default Dashboard;
