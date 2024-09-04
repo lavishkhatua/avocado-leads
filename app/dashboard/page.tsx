@@ -18,9 +18,10 @@ function Dashboard() {
         // <ProtectedRoute>
         <div className="min-h-screen bg-gray-100">
             <Headers />
-            <main className="container mx-auto p-4">
+            <main className="container mx-auto p-4 flex justify-center">
+              <div className='md:w-[70%] w-[100%]'>
             <section className="bg-white p-6 rounded shadow mb-8">
-              <h2 className="text-center text-xl font-bold mb-4 text-green-900">Apollo Scraper Realtime</h2>
+              <h2 className="text-center text-xl font-bold mb-4 text-green-900" >Apollo Scraper Realtime</h2>
               <div className="flex flex-col space-y-4">
                   <div className="flex flex-col md:flex-row md:space-x-4">
                       <input
@@ -37,9 +38,9 @@ function Dashboard() {
                       />
                   </div>
                   <div className="flex justify-end">
-                  <span className="text-black font-semibold pt-2">Leads:</span>
-                  <span className="text-red-600 font-semibold p-2">100</span>
-                      <button className="bg-yellow-400 w-full md:w-96 text-black p-2 rounded">Extract leads</button>
+                  <span className="text-black font-bold pt-2">Leads:</span>
+                  <span className="text-red-600 font-semibold p-2" style={{paddingRight:'35px'}}>100</span>
+                      <button className="md:w-96 text-black p-2 rounded font-bold bg-[#ECE559]" style={{color:'rgb(49 81 44/var(--tw-text-opacity))'}}>Extract leads</button>
                   </div>
               </div>
           </section>
@@ -88,7 +89,7 @@ function Dashboard() {
                                   <td className="px-6 py-4 text-black">{file.leads}</td>
                                   <td className="px-6 py-4">
                                     {file.downloadable ? (
-                                      <button className="bg-blue-500 text-white p-2 rounded">
+                                      <button className="bg-blue-600 text-white p-2 rounded">
                                         Download
                                       </button>
                                     ) : (
@@ -106,6 +107,7 @@ function Dashboard() {
                         <button className="px-3 py-1 bg-blue-500 text-white rounded">&gt;</button>
                     </div>
                 </section>
+              </div>
             </main>
         </div>
         // </ProtectedRoute>

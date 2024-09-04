@@ -16,7 +16,8 @@ function Headers() {
   };
 
   return (
-    <header className="flex items-center justify-between p-4 bg-white shadow">
+    <header className="flex justify-center bg-white shadow">
+      <div className="flex items-center justify-between p-4 w-full bg-white max-w-7xl md:w-[80%] w-[100%]">
       <div className="flex items-center space-x-3">
         <button
           onClick={() => setMenuOpen(!menuOpen)}
@@ -55,7 +56,7 @@ function Headers() {
           height={40}
           className="rounded-full"
         />
-        <span className="text-lg font-semibold text-green-700 p-2">AvocadoLeads</span>
+        <span className="text-lg font-semibold text-green-900 p-2">AvocadoLeads</span>
       </div>
 
       <nav className="hidden md:flex items-center space-x-6">
@@ -124,6 +125,7 @@ function Headers() {
           </nav>
         </div>
       )}
+      </div>
     </header>
   );
 }
