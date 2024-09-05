@@ -1,10 +1,26 @@
 "use client"
-import { useState } from 'react';
+import { useEffect,useState } from 'react';
 import Headers from '../headers/page';
-import ProtectedRoute from '../protectedRoute/protectedRoute';
+import { useRouter } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
 
 function Dashboard() {  
+
+  const router = useRouter();
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const checkUser = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session) {
+        router.push('/login');
+      } else {
+        setLoading(false);
+      }
+    };
+
+    checkUser();
+  }, [router]);
     const [files, setFiles] = useState([
         { name: 'E102', status: 'Cancelled', leads: 10000, downloadable: false },
         { name: 'E103', status: 'Completed', leads: 15000, downloadable: true },
