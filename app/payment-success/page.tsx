@@ -1,11 +1,12 @@
-'use client';
+'use client';  // Client Component directive
 
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation'; // For accessing query parameters
 import Link from 'next/link';
 import { supabase } from '@/lib/supabase'; // Import your initialized Supabase client
 
-const PaymentSuccess = () => {
+// Inner component that contains the logic
+const PaymentSuccessComponent = () => {
   const searchParams = useSearchParams();
   const [transactionRecorded, setTransactionRecorded] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -146,6 +147,15 @@ const PaymentSuccess = () => {
         </Link>
       </div>
     </div>
+  );
+};
+
+// Wrap the component with Suspense to handle loading state
+const PaymentSuccess = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <PaymentSuccessComponent />
+    </Suspense>
   );
 };
 
