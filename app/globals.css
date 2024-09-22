@@ -31,3 +31,15 @@ body {
     text-wrap: balance;
   }
 }
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: #fff; /* Ensures the background is white */
+}
+
+.main-content {
+  background-color: #fff; /* Explicitly setting background to white */
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); Optional: adds subtle shadow for depth */
+}
